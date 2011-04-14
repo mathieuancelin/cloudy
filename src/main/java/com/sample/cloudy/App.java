@@ -30,8 +30,10 @@ public class App {
                     read = false;
                 } else if (line.equals("stop-node")) {
                     app.stopNode();
+                    System.out.println("");
                 } else if (line.equals("start-node")) {
                     app.startNode();
+                    System.out.println("");
                 }
             }
             app.stop();
