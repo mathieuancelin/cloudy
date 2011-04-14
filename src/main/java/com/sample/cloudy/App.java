@@ -20,22 +20,18 @@ public class App {
                     new File("/Users/mathieuancelin/VirtualBoxVMs/JEOS/JEOS.vdi").toURI().toURL(),
                     new IpRange("192.168.86.200", "192.168.86.250"));
             app.start();
-
-
             System.out.println("");
-
-            
-            app.addNode();
-            app.startNode();
-        
             Console console = System.console();
             boolean read = true;
             while(read) {
+                System.out.print("> ");
                 String line = console.readLine();
-                if (line.equals("exit")) {
+                if (line.equals("stop")) {
                     read = false;
-                } else if (line.equals("stop")) {
+                } else if (line.equals("stop-node")) {
                     app.stopNode();
+                } else if (line.equals("start-node")) {
+                    app.startNode();
                 }
             }
             app.stop();

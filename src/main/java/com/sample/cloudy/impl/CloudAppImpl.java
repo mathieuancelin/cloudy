@@ -60,9 +60,10 @@ public class CloudAppImpl implements CloudApp {
     public boolean start() {
         System.out.println("Starting cloud app. : " + name);
         if (nodes.isEmpty()) {
-            boolean created = addNode();
-            created = created && startNode();
-            return created;
+//            boolean created = addNode();
+//            created = created && startNode();
+//            return created;
+            return true;
         } else {
             boolean success = true;
             for (AppNode node : nodes) {
